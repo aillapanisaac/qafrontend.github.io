@@ -40,7 +40,7 @@
   display: none;
   position: fixed;
   bottom: 70px;
-  right: 15px;
+  right: 12px;
   width: 90%; /* Ajustar el ancho para pantallas pequeñas */
   max-width: 320px; /* Limitar el ancho máximo */
   padding: 15px;
@@ -74,5 +74,11 @@
       bottom: 50px;
       right: 10px;
       width: 90%;
+      padding-top: 30px; /* Espacio adicional para el botón de cerrar */
+  }
+
+  .close-button {
+      top: 5px; /* Ajustar la posición superior */
+      right: 5px; /* Ajustar la posición a la derecha */
   }
 }
