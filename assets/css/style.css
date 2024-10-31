@@ -18,3 +18,67 @@
     display: none !important;
   }
 }
+
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 100px;
+  right: 15px;
+  z-index: 99999;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.whatsapp-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 12px;
+  width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+  max-width: 320px; /* Limitar el ancho máximo */
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99999;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+  .chat-popup {
+      bottom: 50px;
+      right: 10px;
+      width: 90%;
+      padding-top: 30px; /* Espacio adicional para el botón de cerrar */
+  }
+
+  .close-button {
+      top: 5px; /* Ajustar la posición superior */
+      right: 5px; /* Ajustar la posición a la derecha */
+  }
+}
