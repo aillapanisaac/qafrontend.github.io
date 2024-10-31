@@ -1,0 +1,20 @@
+.custom-img-size {
+    max-width: 100%; /* Asegura que la imagen nunca sea más grande que su contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    width: 60%; /* Ajustar este valor para reducir aún más el tamaño de la imagen */
+    margin: 20px auto; /* Añade un margen superior e inferior y centra la imagen */
+    display: block; /* Asegura que la imagen se centre correctamente */
+  }
+
+  /* Opcional: ajustar la imagen en pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .custom-img-size {
+      width: 90%; /* En pantallas pequeñas, la imagen ocupará el 90% del contenedor */
+      
+    }
+  }
+@media (max-width: 768px) {
+  div.help-box {
+    display: none !important;
+  }
+}
