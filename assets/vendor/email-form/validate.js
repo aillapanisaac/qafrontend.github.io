@@ -97,12 +97,13 @@
     const telefono = document.getElementById("contact-phone").value;
     const mensaje = document.getElementById("contact-message").value;
 
-    // Validación del teléfono: Debe tener exactamente 13 caracteres en total (+569 seguido de 9 dígitos)
-    const telefonoRegex = /^\+569[0-9]{9}$/;
-    if (!telefonoRegex.test(telefono)) {
-        showModalMessage("El número de teléfono debe comenzar con +569 y tener 9 dígitos adicionales, para un total de 13 caracteres.", "Error");
-        return;  // Detiene el envío del formulario si la validación falla
-    }
+// Validación del teléfono: Puede comenzar opcionalmente con +569 seguido de 9 dígitos, o ser cualquier otro número con solo dígitos
+const telefonoRegex = /^(\+56[0-9]{9})?$|^[0-9]+$/;
+if (!telefonoRegex.test(telefono)) {
+    showModalMessage("El número de teléfono debe ser solo dígitos o comenzar con +569 y tener 9 dígitos adicionales.", "Error");
+    return;  // Detiene el envío del formulario si la validación falla
+}
+
 
     const data = {
       nombre: nombre,
