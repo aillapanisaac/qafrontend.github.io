@@ -197,8 +197,16 @@
       }
     })
   }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("openChat").addEventListener("click", function() {
+        document.getElementById("chatPopup").style.display = "block";
+    });
+
+    document.getElementById("closeChat").addEventListener("click", function() {
+        document.getElementById("chatPopup").style.display = "none";
+    });
+});
 
   
 })();
