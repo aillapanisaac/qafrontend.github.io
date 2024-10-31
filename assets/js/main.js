@@ -199,12 +199,18 @@
   }
 
   document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("openChat").addEventListener("click", function() {
-        document.getElementById("chatPopup").style.display = "block";
+    const openChatButton = document.getElementById("openChat");
+    const chatPopup = document.getElementById("chatPopup");
+    const closeChatButton = document.getElementById("closeChat");
+
+    // Abrir el chat cuando se hace clic en el botón de WhatsApp
+    openChatButton.addEventListener("click", function() {
+        chatPopup.style.display = "block";
     });
 
-    document.getElementById("closeChat").addEventListener("click", function() {
-        document.getElementById("chatPopup").style.display = "none";
+    // Cerrar el chat cuando se hace clic en el botón de cerrar
+    closeChatButton.addEventListener("click", function() {
+        chatPopup.style.display = "none";
     });
 });
 
