@@ -94,7 +94,7 @@
       const swiperConfig = {
         loop: true,
         speed: 600,
-        autoplay: { delay: 2000 },
+        autoplay: { delay: 900 },
         slidesPerView: 'auto',
         pagination: {
           el: '.swiper-pagination',
