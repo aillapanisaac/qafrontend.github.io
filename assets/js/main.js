@@ -1,16 +1,15 @@
-(()=> {
+(() => {
   "use strict";
-  
 
   /**
-   * Apply .scrolled class to the body as the page is scrolled down
+   * Toggle .scrolled class on body based on scroll position
    */
-  function toggleScrolled() {
+  const toggleScrolled = () => {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
+  };
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
@@ -19,14 +18,13 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
+  const mobileNavToggle = () => {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
-  }
+  };
   if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
   }
 
   /**
@@ -34,79 +32,69 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
+      if (document.querySelector('.mobile-nav-active')) mobileNavToggle();
     });
-
   });
 
   /**
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', e => {
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      navmenu.parentNode.classList.toggle('active');
+      navmenu.parentNode.nextElementSibling.classList.toggle('dropdown-active');
       e.stopImmediatePropagation();
     });
   });
 
   /**
-   * Preloader
+   * Preloader removal on page load
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
+    window.addEventListener('load', () => preloader.remove());
   }
 
   /**
    * Scroll top button
    */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
+  const scrollTop = document.querySelector('.scroll-top');
+  const toggleScrollTop = () => {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
-  }
-  scrollTop.addEventListener('click', (e) => {
+  };
+  scrollTop?.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
   /**
-   * Animation on scroll function and init
+   * Initialize AOS animations
    */
-  function aosInit() {
+  const aosInit = () => {
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
       once: true,
       mirror: false
     });
-  }
+  };
   window.addEventListener('load', aosInit);
 
+  /**
+   * Initialize Swiper sliders
+   */
   document.addEventListener('DOMContentLoaded', () => {
     const swiperContainer = document.querySelector('.init-swiper');
-    
     if (swiperContainer) {
       const swiperConfig = {
         loop: true,
         speed: 600,
-        autoplay: {
-          delay: 2000
-        },
+        autoplay: { delay: 2000 },
         slidesPerView: 'auto',
         pagination: {
           el: '.swiper-pagination',
@@ -114,146 +102,62 @@
           clickable: true
         },
         breakpoints: {
-          320: {
-            slidesPerView: 2,
-            spaceBetween: 40
-          },
-          480: {
-            slidesPerView: 3,
-            spaceBetween: 60
-          },
-          640: {
-            slidesPerView: 4,
-            spaceBetween: 80
-          },
-          992: {
-            slidesPerView: 6,
-            spaceBetween: 120
-          }
+          320: { slidesPerView: 2, spaceBetween: 40 },
+          480: { slidesPerView: 3, spaceBetween: 60 },
+          640: { slidesPerView: 4, spaceBetween: 80 },
+          992: { slidesPerView: 6, spaceBetween: 120 }
         }
       };
-  
       new Swiper(swiperContainer, swiperConfig);
     }
   });
-  
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
-  }
-
-  window.addEventListener("load", initSwiper);
 
   /**
-   * Initiate glightbox
+   * GLightbox initialization
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  GLightbox({ selector: '.glightbox' });
 
   /**
-   * Init isotope layout and filters
+   * Isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  document.querySelectorAll('.isotope-layout').forEach(isotopeItem => {
+    const layout = isotopeItem.getAttribute('data-layout') || 'masonry';
+    const filter = isotopeItem.getAttribute('data-default-filter') || '*';
+    const sort = isotopeItem.getAttribute('data-sort') || 'original-order';
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), () => {
+      const initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
         sortBy: sort
       });
-    });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(filterItem => {
+        filterItem.addEventListener('click', () => {
+          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          filterItem.classList.add('filter-active');
+          initIsotope.arrange({ filter: filterItem.getAttribute('data-filter') });
           aosInit();
-        }
-      }, false);
+        });
+      });
     });
-
   });
 
   /**
-   * Initiate Pure Counter
+   * Pure Counter initialization
    */
   new PureCounter();
 
   /**
-   * Correct scrolling position upon page load for URLs containing hash links.
+   * Chat popup functionality
    */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
-  });
-
-  /**
-   * Navmenu Scrollspy
-   */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
-
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    })
-  }
-
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", () => {
     const openChatButton = document.getElementById("openChat");
     const chatPopup = document.getElementById("chatPopup");
     const closeChatButton = document.getElementById("closeChat");
 
-    // Abrir el chat cuando se hace clic en el botón de WhatsApp
-    openChatButton.addEventListener("click", function() {
-        chatPopup.style.display = "block";
-    });
-
-    // Cerrar el chat cuando se hace clic en el botón de cerrar
-    closeChatButton.addEventListener("click", function() {
-        chatPopup.style.display = "none";
-    });
-});
-
-  
+    openChatButton.addEventListener("click", () => chatPopup.style.display = "block");
+    closeChatButton.addEventListener("click", () => chatPopup.style.display = "none");
+  });
 })();
