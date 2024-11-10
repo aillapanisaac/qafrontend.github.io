@@ -60,7 +60,8 @@
     <section id="hero" class="hero section dark-background">
 
   <!-- Video de Fondo -->
-  <video autoplay muted loop playsinline id="hero-video" class="bg-video">
+  <video autoplay muted loop playsinline id="hero-video" class="bg-video" preload="metadata">
+    <track src="assets/subtitles/es_subtitles.srt" kind="subtitles" srclang="es" label="Español">
     <source src="assets/video/coverr-coding-technology.mp4" type="video/mp4">
     Tu navegador no soporta el elemento de video.
   </video>
@@ -73,12 +74,6 @@
             <p>Nos ocupamos de la calidad, tú enfócate en crecer.</p>
           </div>
         </div>
-        
-        
-                
-        
-        
-
         <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
@@ -122,7 +117,7 @@
 
       <!-- Imagen -->
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="assets/img/Nuestros.jpg" alt="Nuestros Servicios" class="img-fluid rounded">
+        <img src="assets/img/Nuestros.jpg" alt="Nuestros Servicios" loading="lazy" class="img-fluid rounded">
       </div>
 
       <!-- Contenido -->
@@ -163,27 +158,24 @@
   </div>
 </section>
 
-
-
-
 <section id="clients" class="clients section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="swiper init-swiper">
       <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide"><img src="assets/img/clients/java.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/js.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/android.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/windows.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/appium.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/jenkins.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/jmeter.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/postman.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/selenium.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/sql.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/github.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/jira.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/postgre.png" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/clients/mysql.png" class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/java.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/js.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/android.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/windows.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/appium.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/jenkins.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/jmeter.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/postman.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/selenium.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/sql.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/github.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/jira.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/postgre.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/mysql.png" class="img-fluid" loading="lazy" alt=""></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -197,7 +189,7 @@
 
     <div class="row gy-4">
       <div class="col-lg-6 col-md-12 order-1 order-lg-2 mb-4 mb-lg-0">
-        <img src="assets/img/Nuestros-Servicios.jpg" alt="Nuestros Servicios" class="img-fluid rounded">
+        <img src="assets/img/Nuestros-Servicios.jpg" alt="Nuestros Servicios" loading="lazy" class="img-fluid rounded">
       </div>      
       <div class="col-lg-6">
 
@@ -258,7 +250,7 @@
 <section id="services" class="services section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Nuestros Servicios</h2>
-    <p>Soluciones de calidad en desarrollo y testing para mejorar tus productos digitales.</p>
+    <p class="fw-bold fs-2 mb-3">Soluciones de calidad en desarrollo y testing para mejorar tus productos digitales.</p>
   </div>
   
   <div class="container">
@@ -359,18 +351,18 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
     <!-- Título de la Sección -->
-    <div class="section-title text-center mb-5">
-      <h2>Conoce a Nuestros Clientes</h2>
-      <p>Tu éxito es nuestro compromiso</p>
+    <div class="section-title">
+      <h2>Nuestros Clientes</h2>
+      <p class="fw-bold fs-2 mb-3">Tu éxito es nuestro compromiso</p>
     </div>
 
     <!-- Logos de Clientes -->
     <div class="row justify-content-center align-items-center">
       <div class="col-6 col-md-3 mb-4">
-        <img src="assets/img/clients/Sello-agua.png" class="img-fluid" alt="Cliente Java">
+        <img src="assets/img/clients/Sello-agua.png" class="img-fluid" loading="lazy" alt="Cliente Java">
       </div>
       <div class="col-6 col-md-3 mb-4">
-        <img src="assets/img/clients/logoTelecam.png" class="img-fluid" alt="Cliente JavaScript">
+        <img src="assets/img/clients/logoTelecam.png" class="img-fluid" loading="lazy" alt="Cliente JavaScript">
       </div>
     </div>
 
@@ -382,9 +374,9 @@
   <div class="container" data-aos="fade-up">
     
     <!-- Título de la Sección -->
-    <div class="section-title text-center mb-5">
+    <div class="section-title">
       <h2>Nuestras Garantías</h2>
-      <p>Confianza y calidad en cada servicio. Estamos comprometidos contigo.</p>
+      <p class="fw-bold fs-2 mb-3">Confianza y calidad en cada servicio. Estamos comprometidos contigo.</p>
     </div>
 
     <!-- Fila de Garantías -->
@@ -393,7 +385,7 @@
       <!-- Garantía 1: Soluciones Personalizadas -->
       <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
         <div class="guarantee-item text-center">
-          <img src="assets/img/Seccion-de-Garantias/soluciones.webp" alt="Soluciones Personalizadas" class="guarantee-icon img-fluid">
+          <img src="assets/img/Seccion-de-Garantias/soluciones.webp" alt="Soluciones Personalizadas" loading="lazy" class="guarantee-icon img-fluid">
           <h4>Soluciones Personalizadas</h4>
           <p>Nos adaptamos a tus necesidades para ayudarte a lograr tus objetivos.</p>
         </div>
@@ -402,7 +394,7 @@
       <!-- Garantía 2: Innovación Constante -->
       <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
         <div class="guarantee-item text-center">
-          <img src="assets/img/Seccion-de-Garantias/Vanguardia.webp" alt="Innovación Constante" class="guarantee-icon img-fluid">
+          <img src="assets/img/Seccion-de-Garantias/Vanguardia.webp" alt="Innovación Constante" loading="lazy" class="guarantee-icon img-fluid">
           <h4>Innovación Constante</h4>
           <p>Utilizamos tecnología de punta para mantenerte a la vanguardia.</p>
         </div>
@@ -411,7 +403,7 @@
       <!-- Garantía 3: Calidad Garantizada -->
       <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="400">
         <div class="guarantee-item text-center">
-          <img src="assets/img/Seccion-de-Garantias/Resultados-de-Calidad.webp" alt="Calidad Garantizada" class="guarantee-icon img-fluid">
+          <img src="assets/img/Seccion-de-Garantias/Resultados-de-Calidad.webp" alt="Calidad Garantizada" loading="lazy" class="guarantee-icon img-fluid">
           <h4>Calidad Garantizada</h4>
           <p>Ofrecemos resultados de alta calidad que superan tus expectativas.</p>
         </div>
@@ -427,7 +419,7 @@
 <!-- Call To Action Section -->
 <section id="call-to-action" class="call-to-action section dark-background">
 
-  <img src="assets/img/cta-bg.jpg" alt="Call To Action Background" class="img-fluid">
+  <img src="assets/img/cta-bg.jpg" alt="Call To Action Background" loading="lazy" class="img-fluid">
 
   <div class="container">
     <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
@@ -452,7 +444,8 @@
         <div class="row gy-4 align-items-center justify-content-between">
 
           <div class="col-lg-5 col-sm-12">
-            <video autoplay muted loop playsinline class="img-fluid">
+            <video autoplay muted loop playsinline class="img-fluid" poster="assets/img/about.jpg" preload="metadata">
+              <track src="assets/subtitles/es_subtitles.srt" kind="subtitles" srclang="es" label="Español">
               <source src="assets/video/coverr-coding-on-a-laptop-2116-1080p.mp4" type="video/mp4">
               Tu navegador no soporta la reproducción de videos.
             </video>

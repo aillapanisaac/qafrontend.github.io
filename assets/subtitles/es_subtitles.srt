@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:03,000
+Bienvenidos a nuestro sitio web.
+
+2
+00:00:03,001 --> 00:00:07,000
+En Ampersands, nos dedicamos a mejorar la calidad de su software.
+
+3
+00:00:07,001 --> 00:00:11,000
+Nos especializamos en automatización, pruebas de rendimiento y seguridad.
+
+4
+00:00:11,001 --> 00:00:15,000
+Nuestra misión es ayudarte a alcanzar el éxito mediante la tecnología.
+
+5
+00:00:15,001 --> 00:00:20,000
+Contáctanos hoy para transformar tu negocio.
