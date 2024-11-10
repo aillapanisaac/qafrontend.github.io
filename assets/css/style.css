@@ -82,3 +82,51 @@
       right: 5px; /* Ajustar la posición a la derecha */
   }
 }
+.testimonials .testimonial-item {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.testimonials .testimonial-logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.testimonials .stars i {
+  color: #ffc107;
+}
+
+.case-study-item {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.case-study-item:hover {
+  transform: translateY(-5px);
+}
+
+.learn-more-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.learn-more-link:hover {
+  text-decoration: underline;
+}
+/* Ajuste de tamaño para las imágenes de garantías */
+.guarantee-icon {
+  width: 450px;
+  height: 450px;
+  object-fit: contain; /* Esto ayuda a ajustar la imagen sin distorsionarla */
+  margin-bottom: 15px; /* Espacio entre la imagen y el título */
+}
+@media (max-width: 768px) {
+  .guarantee-icon {
+    width: 400px;
+    height: 400px;
+  }
+}

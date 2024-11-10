@@ -89,15 +89,15 @@
    * Initialize Swiper sliders
    */
   document.addEventListener('DOMContentLoaded', () => {
-    const swiperContainer = document.querySelector('.init-swiper');
-    if (swiperContainer) {
+    const swiperContainers = document.querySelectorAll('.init-swiper');
+    swiperContainers.forEach((swiperContainer) => {
       const swiperConfig = {
         loop: true,
         speed: 600,
-        autoplay: { delay: 900 },
+        autoplay: { delay: 1200 },
         slidesPerView: 'auto',
         pagination: {
-          el: '.swiper-pagination',
+          el: swiperContainer.querySelector('.swiper-pagination'),
           type: 'bullets',
           clickable: true
         },
@@ -109,8 +109,9 @@
         }
       };
       new Swiper(swiperContainer, swiperConfig);
-    }
+    });
   });
+  
 
   /**
    * GLightbox initialization
@@ -160,4 +161,19 @@
     openChatButton.addEventListener("click", () => chatPopup.style.display = "block");
     closeChatButton.addEventListener("click", () => chatPopup.style.display = "none");
   });
+
+  
+  window.addEventListener("scroll", function () {
+    const fadeText = document.getElementById("fade-text");
+    const maxScroll = 50; // Punto en el que el texto desaparece completamente
+    const scrollPosition = window.scrollY;
+  
+    if (fadeText) {
+      const progress = Math.min(scrollPosition / maxScroll, 1); // Va de 0 a 1
+      fadeText.style.opacity = 1 - progress; // Reduce opacidad
+      fadeText.style.transform = `scale(${1 - 0.2 * progress})`; // Reduce la escala a 80%
+    }
+  });
+  
+
 })();
