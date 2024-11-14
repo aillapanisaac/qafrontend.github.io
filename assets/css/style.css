@@ -82,19 +82,6 @@
       right: 5px; /* Ajustar la posición a la derecha */
   }
 }
-.testimonials .testimonial-item {
-  padding: 20px;
-  background-color: #ffffff;
-}
-
-.testimonials .testimonial-logo {
-  width: 60px;
-  margin-bottom: 10px;
-}
-
-.testimonials .stars i {
-  color: #ffc107;
-}
 
 .case-study-item {
   padding: 20px;
@@ -129,4 +116,119 @@
     width: 400px;
     height: 400px;
   }
+}
+.clients .client-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f9fa;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.clients .client-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.clients .client-card img {
+  max-width: 100px;
+  transition: transform 0.3s ease;
+}
+
+.clients .client-card:hover img {
+  transform: scale(1.1); /* Efecto de acercamiento en la imagen al pasar el cursor */
+}
+
+.clients .client-card h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.clients .client-card p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.clients .client-card .btn {
+  margin-top: 15px;
+}
+/* Estilo para los íconos dentro de la sección de clientes */
+#clients .swiper-slide img {
+  width: 80px; /* Ajusta este valor según el tamaño que prefieras */
+  height: 80px; /* Forzar un tamaño cuadrado */
+  object-fit: contain; /* Ajusta la imagen dentro del contenedor sin distorsionar */
+  padding: 10px;
+}
+
+/* Opcional: Alinear los íconos en el centro de cada slide */
+#clients .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.testimonials {
+  padding: 60px 0;
+}
+.testimonial-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+.testimonial-content {
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 100%;
+}
+.testimonial-text {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+.testimonial-author {
+  margin-top: 20px;
+}
+.testimonial-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.author-info h4 {
+  font-size: 1.2em;
+  margin: 0;
+}
+.author-info p {
+  font-size: 0.9em;
+  color: #777;
+}
+.swiper-button-prev, .swiper-button-next {
+  width: 30px;
+  height: 30px;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  color: #ffc107 !important;
+}
+.swiper-button-next {
+  color: #ffc107;
+}
+.swiper-button-next:hover {
+  color: #e0a800;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  color: #e0a800 !important;
 }

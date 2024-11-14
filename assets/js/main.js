@@ -85,33 +85,64 @@
   };
   window.addEventListener('load', aosInit);
 
-  /**
-   * Initialize Swiper sliders
-   */
+  function initializeSwiperTestimonials(swiperContainer) {
+    const swiperConfig = {
+      loop: true,
+      speed: 1500,
+      autoplay: { delay: 3000 },
+      slidesPerView: 1,
+      pagination: {
+        el: swiperContainer.querySelector('.swiper-pagination'),
+        type: 'bullets',
+        clickable: true
+      },
+      navigation: {
+        nextEl: swiperContainer.querySelector('.swiper-button-next'),
+        prevEl: swiperContainer.querySelector('.swiper-button-prev'),
+      },
+      breakpoints: {
+        320: { slidesPerView: 1, spaceBetween: 20 },
+        480: { slidesPerView: 1, spaceBetween: 30 },
+        640: { slidesPerView: 1, spaceBetween: 40 },
+        992: { slidesPerView: 1, spaceBetween: 50 }
+      }
+    };
+    new Swiper(swiperContainer, swiperConfig);
+  }
+
+  function initializeSwiperClients(swiperContainer) {
+    const swiperConfig = {
+      loop: true,
+      speed: 600,
+      autoplay: { delay: 2000 },
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      pagination: {
+        el: swiperContainer.querySelector('.swiper-pagination'),
+        type: 'bullets',
+        clickable: true
+      },
+      breakpoints: {
+        320: { slidesPerView: 2, spaceBetween: 20 },
+        480: { slidesPerView: 3, spaceBetween: 30 },
+        640: { slidesPerView: 4, spaceBetween: 40 },
+        992: { slidesPerView: 6, spaceBetween: 50 }
+      }
+    };
+    new Swiper(swiperContainer, swiperConfig);
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
-    const swiperContainers = document.querySelectorAll('.init-swiper');
-    swiperContainers.forEach((swiperContainer) => {
-      const swiperConfig = {
-        loop: true,
-        speed: 600,
-        autoplay: { delay: 1200 },
-        slidesPerView: 'auto',
-        pagination: {
-          el: swiperContainer.querySelector('.swiper-pagination'),
-          type: 'bullets',
-          clickable: true
-        },
-        breakpoints: {
-          320: { slidesPerView: 2, spaceBetween: 40 },
-          480: { slidesPerView: 3, spaceBetween: 60 },
-          640: { slidesPerView: 4, spaceBetween: 80 },
-          992: { slidesPerView: 6, spaceBetween: 120 }
-        }
-      };
-      new Swiper(swiperContainer, swiperConfig);
+    const swiperTestimonials = document.querySelectorAll('.init-swiper-testimonials');
+    swiperTestimonials.forEach((swiperContainer) => {
+      initializeSwiperTestimonials(swiperContainer);
+    });
+
+    const swiperClients = document.querySelectorAll('.init-swiper');
+    swiperClients.forEach((swiperContainer) => {
+      initializeSwiperClients(swiperContainer);
     });
   });
-  
 
   /**
    * GLightbox initialization
@@ -174,6 +205,7 @@
       fadeText.style.transform = `scale(${1 - 0.2 * progress})`; // Reduce la escala a 80%
     }
   });
+  
   
 
 })();
