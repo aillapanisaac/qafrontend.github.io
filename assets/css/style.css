@@ -182,9 +182,9 @@
   height: auto;
 }
 .testimonial-content {
-  padding: 30px;
+  padding: 35px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 0px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   width: 100%;
