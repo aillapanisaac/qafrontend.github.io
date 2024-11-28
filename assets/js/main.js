@@ -205,7 +205,113 @@
       fadeText.style.transform = `scale(${1 - 0.2 * progress})`; // Reduce la escala a 80%
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Inicializar CodeMirror
+    const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+      lineNumbers: true,
+      mode: "javascript",
+      theme: "monokai", // Tema oscuro similar a editores de código reales
+      readOnly: true // Para evitar que el usuario escriba manualmente
+    });
   
+    // Código React del componente de inicio de sesión
+    const code = `
+  import React, { useState } from 'react';
   
+  function LoginForm() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (username === 'testUser' && password === 'securePassword123') {
+        console.log('Login Successful');
+      } else {
+        console.log('Invalid Username or Password');
+      }
+    };
+  
+    return (
+      <div className="login-container">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input 
+              type="text" 
+              id="username" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input 
+              type="password" 
+              id="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    );
+  }
+  
+  export default LoginForm;`;
+  
+    // Variables para la animación
+    let index = 0;
+    const speed = 100;  // Velocidad de escritura en milisegundos (valor más alto = escritura más lenta)
+  
+    function writeCode() {
+      if (index <= code.length) {
+        // Establecer el valor en CodeMirror hasta el índice actual
+        editor.setValue(code.slice(0, index));
+        index++;
+        // Llamar a la función de nuevo después de un tiempo
+        setTimeout(writeCode, speed);
+      } else {
+        // Reiniciar la animación una vez que se complete
+        setTimeout(() => {
+          index = 0; // Reiniciar el índice
+          writeCode(); // Iniciar la escritura nuevamente
+        }, 1000); // Pausar por 1 segundo antes de reiniciar la escritura
+      }
+    }
+  
+    // Iniciar la escritura automática
+    writeCode();
+  });
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+            duration: 1000, // Duración de la animación en milisegundos
+            easing: 'ease-in-out',
+            once: true, // Solo anima una vez
+        });
+    });
+  
+// Script para el efecto de autocompletado y la barra de progreso
+document.addEventListener('DOMContentLoaded', function () {
+  // Obtener todas las tarjetas de paso
+  const steps = document.querySelectorAll('.steps-container .step');
+  
+  // Retraso inicial en milisegundos
+  let delay = 1000;
+
+  steps.forEach((step, index) => {
+      setTimeout(() => {
+          step.classList.add('completed');
+          // Calcular el ancho de la barra de progreso según el paso completado
+          const progressPercentage = ((index + 1) / steps.length) * 100;
+          progressBar.style.width = progressPercentage + '%';
+      }, delay);
+      // Incrementar el retraso para cada tarjeta
+      delay += 2000; // Incrementado para un efecto de carga más lenta
+  });
+});
+
 
 })();

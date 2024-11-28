@@ -241,3 +241,80 @@
   text-align: center;
   line-height: 1.2;
 }
+.code-editor-container {
+  width: 100%;
+  max-width: 600px; /* Ancho máximo del editor */
+  height: 400px; /* Altura fija del editor */
+  border-radius: 5px; /* Bordes redondeados */
+  overflow: hidden; /* Para asegurarse de que el editor no sobresalga de los bordes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para un mejor efecto */
+  background-color: #2d2d2d; /* Fondo para que se vea mejor con el tema oscuro */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.CodeMirror {
+  height: 100%; /* Ocupa todo el alto del contenedor */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+/* Estilos para el contenedor de publicidad */
+.custom-ad-container {
+  position: relative;
+  width: 90%;
+  max-width: 450px;
+  padding: 0px;
+  background-color: #fff; /* Fondo blanco */
+  overflow: hidden;
+}
+
+/* Estilos para la imagen */
+.custom-image-wrapper {
+  position: relative;
+  z-index: 2; /* Asegurarse de que la imagen esté sobre los fondos decorativos */
+}
+
+.custom-image-wrapper img {
+  width: 120%; /* Agrandar la imagen */
+  height: auto;
+}
+
+/* Estilos para las formas decorativas */
+.custom-background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Detrás de la imagen */
+}
+
+/* Estilos para los pasos y la barra de progreso */
+
+.step.completed .circle {
+  background-color: #ffc107; /* Amarillo para indicar completado */
+  color: #fff;
+}
+
+.step.completed {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.step {
+  opacity: 0.7;
+  transition: opacity 1s ease-in-out;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Ajustar la posición de la barra de progreso para que esté debajo de los pasos */
+.progress-bar-wrapper {
+  position: relative;
+  height: 10px;
+  background-color: #e0e0e0; /* Fondo gris para la barra de progreso */
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px; /* Espacio para evitar que toque el contenido */
+}
+

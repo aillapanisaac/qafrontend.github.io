@@ -22,6 +22,17 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<!-- CodeMirror CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+<!-- Tema oscuro Monokai para CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/monokai.min.css">
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+
+
+
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -70,7 +81,7 @@
 
         <div class="row justify-content-center text-center" id="fade-text">
           <div class="col-xl-12 col-lg-8">
-            <h2>Impulsa tu negocio con tecnología inteligente<span>.</span></h2>
+            <h2>Mejore la calidad de su software. Impulse el crecimiento global<span>.</span></h2>
             <p>Nos ocupamos de la calidad, tú enfócate en crecer.</p>
           </div>
         </div>
@@ -125,7 +136,7 @@
     
         <div class="row gy-4">
           <div class="col-lg-6 col-md-12 order-1 order-lg-2 mb-4 mb-lg-0">
-            <img src="assets/img/Nuestros-Servicios.jpg" alt="Nuestros Servicios" loading="lazy" class="img-fluid rounded">
+            <img src="assets/img/Nuestros-Servicios.webp" alt="Nuestros Servicios" loading="lazy" class="img-fluid rounded">
           </div>      
           <div class="col-lg-6">
     
@@ -174,14 +185,81 @@
       </div>
     </div>
     
-    
           </div>
         </div>
     
       </div>
     
-    </section><!-- /Features Section -->
+    </section>
 
+    <section id="how-to-hire" class="how-to-hire-section">
+      <div class="container">
+          <h2 class="text-center font-roboto">Cómo contratar desarrolladores a través de Ampersands</h2>
+          <div class="steps-container mt-5">
+              <div class="d-flex flex-column flex-lg-row justify-content-around align-items-start mb-4">
+                  <div class="step p-3" data-aos="fade-up">
+                      <div class="step-number">
+                          <div class="circle"></div>
+                      </div>
+                      <h4 class="step-title text-center">Hable con uno de nuestros asesores de clientes</h4>
+                      <p class="step-description text-center">
+                          Un asesor de clientes de Ampersands trabajará con usted para comprender sus objetivos, necesidades técnicas y dinámica de equipo.
+                      </p>
+                  </div>
+
+                  <div class="step p-3" data-aos="fade-up" data-aos-delay="400">
+                      <div class="step-number">
+                          <div class="circle"></div>
+                      </div>
+                      <h4 class="step-title text-center">Trabaje con talentos cuidadosamente seleccionados</h4>
+                      <p class="step-description text-center">
+                          En cuestión de días, le presentaremos al desarrollador adecuado para su proyecto. El tiempo promedio de búsqueda es de menos de 24 horas.
+                      </p>
+                  </div>
+
+                  <div class="step p-3" data-aos="fade-up" data-aos-delay="800">
+                      <div class="step-number">
+                          <div class="circle"></div>
+                      </div>
+                      <h4 class="step-title text-center">El ajuste perfecto, garantizado</h4>
+                      <p class="step-description text-center">
+                          Trabaje con su nuevo desarrollador de TI durante un período de prueba (pague solo si está satisfecho), asegurándose de que sea la persona adecuada antes de comenzar el compromiso.
+                      </p>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </section>
+  
+  
+    
+    
+      <section id="code-editor-section" class="editor section my-5">
+        <div class="container">
+            <div class="row">
+                <!-- Columna para el editor de código -->
+                <div class="col-12 col-md-6">
+                    <h2 class="text-center mb-4 text-light">Editor de Código Simulado</h2>
+                    <div class="code-editor-container p-2">
+                        <!-- Aquí se insertará el editor de CodeMirror -->
+                        <textarea id="code-editor"></textarea>
+                    </div>
+                </div>
+    
+                <!-- Columna para la publicidad (diseño personalizado) -->
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class="custom-ad-container text-center">
+                        <div class="custom-image-wrapper">
+                            <img src="assets/img/code.webp" alt="Representación Publicitaria" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
 <section id="clients" class="clients section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -201,6 +279,9 @@
         <div class="swiper-slide"><img src="assets/img/clients/jira.png" class="img-fluid" loading="lazy" alt=""></div>
         <div class="swiper-slide"><img src="assets/img/clients/postgre.png" class="img-fluid" loading="lazy" alt=""></div>
         <div class="swiper-slide"><img src="assets/img/clients/mysql.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/gitlab.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/ZE.png" class="img-fluid" loading="lazy" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/clients/Testrail.png" class="img-fluid" loading="lazy" alt=""></div>
       </div>  
     </div>
   </div>
@@ -211,7 +292,7 @@
 <section id="services" class="services section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Nuestros Servicios</h2>
-    <p class="fw-bold fs-2 mb-3">Soluciones de calidad en desarrollo y testing para mejorar tus productos digitales.</p>
+    <p class="fw-bold fs-2 mb-3">¿Qué puedes probar?</p>
   </div>
   
   <div class="container">
@@ -307,33 +388,33 @@
   </div>
 </section>
 
-<!-- Sección de Testimonios -->
+<!-- 
 <section id="testimonials" class="testimonials section">
   <div class="container" data-aos="fade-up">
     <div class="row">
 
-          <!-- Título de la Sección -->
+          
     <div class="section-title">
       <h2>Nuestros Clientes</h2>
       <p class="fw-bold fs-2 mb-3">Tu éxito es nuestro compromiso</p>
     </div>
 
-<!-- Sección de Testimonios -->
+
 <section id="testimonials" class="testimonials section">
   <div class="container" data-aos="fade-up">
     <div class="row">
-      <!-- Contenedor de Título y Botón -->
+      
       <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
         <div class="section-title mb-4 text-center">
           <h6 class="section-title-enhanced-black">Soluciones para cada empresa</h6>
         </div>
       </div>
 
-      <!-- Swiper para Testimonios -->
+      
       <div class="col-12 col-lg-8 d-flex align-items-center">
         <div class="swiper init-swiper-testimonials w-100">
           <div class="swiper-wrapper">
-            <!-- Testimonio 1 -->
+            
             <div class="swiper-slide testimonial-item">
               <div class="testimonial-content">
                 <p class="testimonial-text text-center">“Para mí, Ampersands es 'todo en uno'.”</p>
@@ -346,7 +427,7 @@
                 </div>
               </div>
             </div>
-            <!-- Testimonio 3 -->
+            
             <div class="swiper-slide testimonial-item">
               <div class="testimonial-content">
                 <p class="testimonial-text text-center">“El equipo de Ampersands nos ha proporcionado soluciones personalizadas que han elevado la calidad de nuestros productos y la satisfacción de nuestros clientes.”</p>
@@ -359,10 +440,10 @@
                 </div>
               </div>
             </div>
-            <!-- Más testimonios pueden agregarse aquí -->
+            
           </div>
           
-          <!-- Controles de Navegación -->
+          
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
           <div class="swiper-pagination"></div>
@@ -370,7 +451,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
     </div>
@@ -641,6 +722,15 @@
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- CodeMirror JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 
 
   <!-- Main JS File -->
