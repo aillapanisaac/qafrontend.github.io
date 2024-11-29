@@ -61,7 +61,7 @@
 
 
 
-      <a class="btn-getstarted" href="#contact">Conoce más</a>
+      <a class="btn-uniform" href="#contact">Conoce más</a>
     </div>
   </header>
 
@@ -70,11 +70,10 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-  <!-- Video de Fondo -->
   <video autoplay muted loop playsinline id="hero-video" class="bg-video" preload="metadata">
-    <track src="assets/subtitles/es_subtitles.srt" kind="subtitles" srclang="es" label="Español">
     <source src="assets/video/coverr-coding-technology.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
+    <track src="assets/subtitles/es_subtitles.srt" kind="subtitles" srclang="es" label="Español">
+    <img src="assets/img/fallback.webp" alt="Imagen de respaldo" class="bg-fallback">
   </video>
 
       <div class="container">
@@ -122,7 +121,197 @@
 
     </section><!-- /Hero Section -->
 
+    
+    <section id="what-we-do" class="what-we-do-section mt-5">
+      <div class="container">
+        <h2 class="section-title">Qué hacemos</h2>
+        <div class="row align-items-center mt-4">
+    
+          <!-- Columna de Texto -->
+          <div class="col-12 col-md-6 text-column mb-4">
+            <div id="typewriter-text" class="typewriter-container"></div>
+            <div class="sub-title-underline mb-3"></div>
+            <p class="description">
+              Si buscas mejorar tu equipo interno, nuestro modelo de aumento de personal es perfecto para ti. Los talentos sénior se sumarán a tu equipo como miembros comprometidos: proactivos, adaptables y amigables. Nuestros desarrolladores full-stack, QA, DevOps, diseñadores y gerentes de producto pueden unirse a tu proyecto en tan solo dos semanas.
+            </p>
+            <a href="#more-info" class="btn-uniform">Ver más</a>
+          </div>
+      
 
+          
+          <!-- Columna de Imagen -->
+          <div class="col-12 col-md-6 image-column">
+            <img src="assets/img/Qué hacemos.webp" alt="Escala tu equipo" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="our-services" class="our-services-section mt-5">
+      <section id="our-services" class="our-services-section mt-5">
+        <div class="container">
+          <!-- Título -->
+          <h2 class="text-center section-title">Trabajamos con</h2>
+          <p class="text-center description">
+            Si un equipo externo se encarga de todos los aspectos del control de calidad de su proyecto de software, ahorrará tiempo y dinero en lugar de tener que crear un departamento de control de calidad interno. Contamos con ingenieros de pruebas especializados con años de experiencia y en esto pueden ayudarle.
+          </p>
+      
+          <!-- Pestañas -->
+          <div class="tabs-container mt-4">
+            <button class="tab-button active" data-target="full-cycle">Servicios de ciclo completo</button>
+            <button class="tab-button" data-target="platform">Por plataforma</button>
+            <button class="tab-button" data-target="type">Por tipo</button>
+            <button class="tab-button" data-target="industries">Industrias</button>
+          </div>
+      
+          <!-- Contenedores de Tarjetas -->
+          <!-- Servicios de ciclo completo -->
+          <div id="full-cycle" class="service-group active mt-5">
+            <div class="row">
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas manuales</h4>
+                  <p class="service-description">Máxima precisión y atención al detalle para un resultado impecable.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-code-slash"></i>
+                  </div>
+                  <h4 class="service-title">Automatización de pruebas</h4>
+                  <p class="service-description">Automatizaremos miles de pruebas para una cobertura integral.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-globe"></i>
+                  </div>
+                  <h4 class="service-title">Subcontratación de pruebas</h4>
+                  <p class="service-description">Subcontrate sus necesidades de pruebas a un equipo de expertos con las habilidades relevantes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Por plataforma -->
+          <div id="platform" class="service-group mt-5">
+            <div class="row">
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-android2"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas en Android</h4>
+                  <p class="service-description">Servicios especializados para aplicaciones móviles Android.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-apple"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas en iOS</h4>
+                  <p class="service-description">Pruebas dedicadas para asegurar la calidad en dispositivos Apple.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-windows"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas en Windows</h4>
+                  <p class="service-description">Pruebas robustas para aplicaciones en el ecosistema Windows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Por tipo -->
+          <div id="type" class="service-group mt-5">
+            <div class="row">
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-shield-lock"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas de seguridad</h4>
+                  <p class="service-description">Garantizamos que sus aplicaciones sean seguras frente a ataques y amenazas.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-speedometer2"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas de rendimiento</h4>
+                  <p class="service-description">Verificamos que su aplicación mantenga un rendimiento óptimo bajo alta carga.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-bug-fill"></i>
+                  </div>
+                  <h4 class="service-title">Pruebas funcionales</h4>
+                  <p class="service-description">Comprobamos que todas las funcionalidades de su aplicación cumplan con los requerimientos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Industrias -->
+          <div id="industries" class="service-group mt-5">
+            <div class="row">
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-briefcase-fill"></i>
+                  </div>
+                  <h4 class="service-title">Fintech</h4>
+                  <p class="service-description">Pruebas específicas para garantizar la calidad de las aplicaciones en el sector financiero.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-hospital-fill"></i>
+                  </div>
+                  <h4 class="service-title">Salud</h4>
+                  <p class="service-description">Validación de software médico y aplicaciones para asegurar estándares de calidad en salud.</p>
+                </div>
+              </div>
+      
+              <div class="col-12 col-md-4 mb-4">
+                <div class="service-card p-4 text-center">
+                  <div class="icon mb-3">
+                    <i class="bi bi-cart-fill"></i>
+                  </div>
+                  <h4 class="service-title">Retail</h4>
+                  <p class="service-description">Pruebas robustas para aplicaciones de comercio electrónico y servicios de retail.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+    
     <!-- Features Section -->
     <section id="features" class="features section">
       <div class="row justify-content-center">
@@ -190,47 +379,44 @@
     
       </div>
     
-    </section>
-
-    <section id="how-to-hire" class="how-to-hire-section">
-      <div class="container">
+      <section id="how-to-hire" class="how-to-hire-section">
+        <div class="container">
           <h2 class="text-center font-roboto">Cómo contratar desarrolladores a través de Ampersands</h2>
-          <div class="steps-container mt-5">
-              <div class="d-flex flex-column flex-lg-row justify-content-around align-items-start mb-4">
-                  <div class="step p-3" data-aos="fade-up">
-                      <div class="step-number">
-                          <div class="circle"></div>
-                      </div>
-                      <h4 class="step-title text-center">Hable con uno de nuestros asesores de clientes</h4>
-                      <p class="step-description text-center">
-                          Un asesor de clientes de Ampersands trabajará con usted para comprender sus objetivos, necesidades técnicas y dinámica de equipo.
-                      </p>
-                  </div>
-
-                  <div class="step p-3" data-aos="fade-up" data-aos-delay="400">
-                      <div class="step-number">
-                          <div class="circle"></div>
-                      </div>
-                      <h4 class="step-title text-center">Trabaje con talentos cuidadosamente seleccionados</h4>
-                      <p class="step-description text-center">
-                          En cuestión de días, le presentaremos al desarrollador adecuado para su proyecto. El tiempo promedio de búsqueda es de menos de 24 horas.
-                      </p>
-                  </div>
-
-                  <div class="step p-3" data-aos="fade-up" data-aos-delay="800">
-                      <div class="step-number">
-                          <div class="circle"></div>
-                      </div>
-                      <h4 class="step-title text-center">El ajuste perfecto, garantizado</h4>
-                      <p class="step-description text-center">
-                          Trabaje con su nuevo desarrollador de TI durante un período de prueba (pague solo si está satisfecho), asegurándose de que sea la persona adecuada antes de comenzar el compromiso.
-                      </p>
-                  </div>
-              </div>
-
+      
+          <!-- Container de Pasos -->
+          <div class="steps-container mt-5 row justify-content-center">
+            <!-- Paso 1 -->
+            <div class="step-item col-12 col-md-4 text-center mb-5" data-aos="fade-up">
+              <div class="circle mb-3">1</div>
+              <h4 class="step-title">Hable con uno de nuestros asesores de clientes</h4>
+              <p class="step-description">
+                Un asesor de clientes de Ampersands trabajará con usted para comprender sus objetivos, necesidades técnicas y dinámica de equipo.
+              </p>
+            </div>
+      
+            <!-- Paso 2 -->
+            <div class="step-item col-12 col-md-4 text-center mb-5" data-aos="fade-up" data-aos-delay="400">
+              <div class="circle mb-3">2</div>
+              <h4 class="step-title">Trabaje con talentos cuidadosamente seleccionados</h4>
+              <p class="step-description">
+                En cuestión de días, le presentaremos al desarrollador adecuado para su proyecto. El tiempo promedio de búsqueda es de menos de 24 horas.
+              </p>
+            </div>
+      
+            <!-- Paso 3 -->
+            <div class="step-item col-12 col-md-4 text-center mb-5" data-aos="fade-up" data-aos-delay="800">
+              <div class="circle mb-3">3</div>
+              <h4 class="step-title">El ajuste perfecto, garantizado</h4>
+              <p class="step-description">
+                Trabaje con su nuevo desarrollador de TI durante un período de prueba (pague solo si está satisfecho), asegurándose de que sea la persona adecuada antes de comenzar el compromiso.
+              </p>
+            </div>
           </div>
-      </div>
-  </section>
+        </div>
+      </section>
+      
+      
+    
   
   
     
@@ -259,6 +445,47 @@
         </div>
     </section>
 
+    <section id="business-potential" class="business-potential-section mt-5">
+      <div class="container">
+        <h2 class="text-center font-roboto">¿Está listo para ahorrar tiempo, mejorar la calidad, la cobertura y ofrecer un software excepcional?</h2>
+        <p class="text-center text-muted">Explora el potencial de tu negocio con nuestro plan gratuito y sin compromiso:</p>
+    
+        <div class="row justify-content-center mt-5">
+          <!-- Columna 1 -->
+          <div class="col-12 col-md-4 text-center mb-4" data-aos="fade-up">
+            <div class="icon-wrapper mb-3">
+              <img src="assets/img/icon1.png" alt="Icono Potencial" class="img-fluid">
+            </div>
+            <h4 class="step-title">Descubre tu potencial</h4>
+            <p class="step-description">
+              Revisaremos su proceso actual, identificaremos fortalezas, señalaremos desafíos y exploraremos cómo nuestra experiencia puede mejorar la calidad de su software.
+            </p>
+          </div>
+    
+          <!-- Columna 2 -->
+          <div class="col-12 col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-wrapper mb-3">
+              <img src="assets/img/icon2.png" alt="Icono Técnico" class="img-fluid">
+            </div>
+            <h4 class="step-title">Exploración técnica</h4>
+            <p class="step-description">
+              Nos familiarizaremos con sus sistemas, entornos y el alcance del trabajo para personalizar nuestros servicios en consecuencia.
+            </p>
+          </div>
+    
+          <!-- Columna 3 -->
+          <div class="col-12 col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-wrapper mb-3">
+              <img src="assets/img/icon3.png" alt="Icono Pruebas" class="img-fluid">
+            </div>
+            <h4 class="step-title">Enfoque de prueba personalizado</h4>
+            <p class="step-description">
+              Identificaremos y articularemos el enfoque de prueba óptimo o la combinación de enfoques para su proyecto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     
 
 <section id="clients" class="clients section">
@@ -289,104 +516,6 @@
 
 
 
-<section id="services" class="services section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Nuestros Servicios</h2>
-    <p class="fw-bold fs-2 mb-3">¿Qué puedes probar?</p>
-  </div>
-  
-  <div class="container">
-    <div class="row gy-4">
-      
-      <!-- Pruebas Web Eficientes -->
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="bi bi-activity"></i>
-          </div>
-          <a href="service-details.html#pruebas-web" class="stretched-link">
-            <h5 class="card-title">Pruebas Web Eficientes</h5>
-          </a>
-          <p class="card-text">Aseguramos aplicaciones web seguras y rápidas, mejorando la experiencia del usuario</p>
-          <div class="card-footer bg-transparent border-0">
-            <a href="service-details.html#pruebas-web" class="btn btn-link">Más información</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Validación de APIs -->
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-broadcast"></i></div>
-          <a href="service-details.html#validacion-apis" class="stretched-link">
-            <h5 class="card-title">Validación de APIs</h5>
-          </a>
-          <p class="card-text">Verificamos la estabilidad y rendimiento de tus APIs para una integración perfecta.</p>
-          <div class="card-footer bg-transparent border-0">
-            <a href="service-details.html#validacion-apis" class="btn btn-link">Más información</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Pruebas de Aplicaciones Móviles -->
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-easel"></i></div>
-          <a href="service-details.html#pruebas-moviles" class="stretched-link">
-            <h5 class="card-title">Pruebas de Apps Móviles</h5>
-          </a>
-          <p class="card-text">Garantizamos funcionamiento óptimo en iOS y Android, mejorando la retención de usuarios.</p>
-          <div class="card-footer bg-transparent border-0">
-            <a href="service-details.html#pruebas-moviles" class="btn btn-link">Más información</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Pruebas de Aceptación de Usuario (UAT) -->
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-bounding-box-circles"></i></div>
-          <a href="service-details.html#uat" class="stretched-link">
-            <h5 class="card-title">Pruebas de Aceptación (UAT)</h5>
-          </a>
-          <p class="card-text">Facilitamos UAT para asegurar que tu software cumpla con los requisitos del cliente.</p>
-          <div class="card-footer bg-transparent border-0">
-            <a href="service-details.html#uat" class="btn btn-link">Más información</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Integración Continua -->
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-          <a href="service-details.html#integracion-continua" class="stretched-link">
-            <h5 class="card-title">Integración Continua</h5>
-          </a>
-          <p class="card-text">Automatizamos CI/CD para reducir errores y acelerar el desarrollo.</p>
-          <div class="card-footer bg-transparent border-0">
-            <a href="service-details.html#integracion-continua" class="btn btn-link">Más información</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Evaluación de Rendimiento -->
-      <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="600">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-chat-square-text"></i></div>
-          <a href="service-details.html#evaluacion-rendimiento" class="stretched-link">
-            <h5 class="card-title">Evaluación de Rendimiento</h5>
-          </a>
-          <p class="card-text">Evaluamos tu software bajo alta carga para asegurar eficiencia y escalabilidad.</p>
-          <div class="card-footer bg-transparent border-0">
-            <a href="service-details.html#evaluacion-rendimiento" class="btn btn-link">Más información</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- 
 <section id="testimonials" class="testimonials section">
@@ -471,7 +600,7 @@
           <h3>Impulsa la Calidad y Eficiencia de tu Software</h3>
           <p>Transforma la manera en que desarrollas y entregas software con nuestros servicios avanzados de automatización de pruebas y QA. 
             Garantizamos aplicaciones seguras, rápidas y de alto rendimiento, listas para enfrentar los desafíos del futuro digital.</p>
-          <a class="cta-btn" href="#contact">Contáctanos Hoy</a>
+          <a class="btn-uniform" href="#contact">Contáctanos Hoy</a>
         </div>
       </div>
     </div>
@@ -600,7 +729,7 @@
                     </div>
                     <div class="col-12 col-md-12 text-center">
 
-                      <button class="btn btn-warning btn-xl" type="submit">Enviar Mensaje</button>
+                      <button class="btn-uniform btn-xl" type="submit">Enviar Mensaje</button>
                       
                     </div>
                   </div>

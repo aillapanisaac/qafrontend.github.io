@@ -59,6 +59,16 @@
   /**
    * Scroll top button
    */
+  // Scroll suave para todos los enlaces con hashes
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
   const scrollTop = document.querySelector('.scroll-top');
   const toggleScrollTop = () => {
     if (scrollTop) {
@@ -212,8 +222,10 @@
       lineNumbers: true,
       mode: "javascript",
       theme: "monokai", // Tema oscuro similar a editores de código reales
-      readOnly: true // Para evitar que el usuario escriba manualmente
+      readOnly: true, // Para evitar que el usuario escriba manualmente
+      lineWrapping: true // Ajustar líneas para evitar el scroll horizontal
     });
+    
   
     // Código React del componente de inicio de sesión
     const code = `
@@ -312,6 +324,70 @@ document.addEventListener('DOMContentLoaded', function () {
       delay += 2000; // Incrementado para un efecto de carga más lenta
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const steps = document.querySelectorAll('.step-item');
+  const arrows = document.querySelectorAll('.arrow-container');
+
+  let delay = 500; // Retraso inicial en ms
+
+  steps.forEach((step, index) => {
+    setTimeout(() => {
+      step.classList.add('active');
+      if (index < arrows.length) {
+        arrows[index].classList.add('active');
+      }
+    }, delay);
+    delay += 800; // Retraso para cada aparición
+  });
+});
+
+
+const textArray = [
+  "Escala tu equipo rápidamente.",
+  "Sumamos talentos sénior comprometidos.",
+  "Aumentamos la capacidad de tu equipo QA, DevOps, Full-Stack."
+];
+let arrayIndex = 0;
+let charIndex = 0;
+
+function typeWriter() {
+  if (charIndex < textArray[arrayIndex].length) {
+    document.getElementById("typewriter-text").innerHTML += textArray[arrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeWriter, 100);
+  } else {
+    setTimeout(() => {
+      charIndex = 0;
+      document.getElementById("typewriter-text").innerHTML = '';
+      arrayIndex = (arrayIndex + 1) % textArray.length;
+      typeWriter();
+    }, 2000);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", typeWriter);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const serviceGroups = document.querySelectorAll(".service-group");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      // Eliminar la clase 'active' de todos los botones
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      // Añadir la clase 'active' al botón seleccionado
+      button.classList.add("active");
+
+      // Ocultar todos los grupos de servicios
+      serviceGroups.forEach(group => group.classList.remove("active"));
+      // Mostrar el grupo correspondiente al botón seleccionado
+      const target = button.getAttribute("data-target");
+      document.getElementById(target).classList.add("active");
+    });
+  });
+});
+
 
 
 })();

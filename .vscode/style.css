@@ -255,7 +255,13 @@
 .CodeMirror {
   height: 100%; /* Ocupa todo el alto del contenedor */
   width: 100%; /* Ocupa todo el ancho del contenedor */
+  overflow: hidden !important; /* Quitar scroll */
 }
+
+.CodeMirror-scroll {
+  overflow: hidden !important; /* Quitar scroll horizontal y vertical */
+}
+
 /* Estilos para el contenedor de publicidad */
 .custom-ad-container {
   position: relative;
@@ -316,5 +322,22 @@
   border-radius: 5px;
   overflow: hidden;
   margin-top: 20px; /* Espacio para evitar que toque el contenido */
+}
+/* Clase unificada para todos los botones */
+.btn-uniform {
+  background-color: var(--accent-color); /* Utiliza el color de acento de la marca */
+  color: var(--contrast-color);
+  padding: 10px 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-uniform:hover {
+  background-color: var(--contrast-color); /* Cambia el color de fondo al pasar el cursor */
+  color: var(--accent-color);
+  cursor: pointer;
 }
 

@@ -917,6 +917,18 @@ section,
     font-size: 24px;
   }
 }
+/* Mostrar la imagen de respaldo en lugar del video en pantallas pequeñas */
+@media (max-width: 768px) {
+  #hero video {
+    display: none;
+  }
+  .bg-fallback {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
 
 
 /*--------------------------------------------------------------
@@ -1605,4 +1617,666 @@ section,
 --------------------------------------------------------------*/
 #fade-text h2, #fade-text p {
   transition: opacity 0.5s ease, transform 0.5s ease; /* Transición para opacidad y escala */
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000; /* Fondo negro */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#preloader .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Color claro */
+  border-top: 5px solid var(--accent-color); /* Color de la marca */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.custom-img-size {
+  max-width: 100%; /* Asegura que la imagen nunca sea más grande que su contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  width: 60%; /* Ajustar este valor para reducir aún más el tamaño de la imagen */
+  margin: 20px auto; /* Añade un margen superior e inferior y centra la imagen */
+  display: block; /* Asegura que la imagen se centre correctamente */
+}
+
+/* Opcional: ajustar la imagen en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .custom-img-size {
+    width: 90%; /* En pantallas pequeñas, la imagen ocupará el 90% del contenedor */
+    
+  }
+}
+@media (max-width: 768px) {
+div.help-box {
+  display: none !important;
+}
+}
+
+
+.whatsapp-button {
+position: fixed;
+bottom: 100px;
+right: 15px;
+z-index: 99999;
+background: none;
+border: none;
+padding: 0;
+cursor: pointer;
+}
+
+.whatsapp-icon {
+width: 45px;
+height: 45px;
+}
+
+.chat-popup {
+display: none;
+position: fixed;
+bottom: 70px;
+right: 12px;
+width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+max-width: 320px; /* Limitar el ancho máximo */
+padding: 15px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+z-index: 99999;
+}
+
+.close-button {
+position: absolute;
+top: 8px;
+right: 8px;
+background: none;
+border: none;
+font-size: 20px;
+font-weight: bold;
+color: #888;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.close-button:hover {
+color: #333;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+.chat-popup {
+    bottom: 50px;
+    right: 10px;
+    width: 90%;
+    padding-top: 30px; /* Espacio adicional para el botón de cerrar */
+}
+
+.close-button {
+    top: 5px; /* Ajustar la posición superior */
+    right: 5px; /* Ajustar la posición a la derecha */
+}
+}
+
+.case-study-item {
+padding: 20px;
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s;
+}
+
+.case-study-item:hover {
+transform: translateY(-5px);
+}
+
+.learn-more-link {
+color: #007bff;
+text-decoration: none;
+font-weight: 500;
+}
+
+.learn-more-link:hover {
+text-decoration: underline;
+}
+/* Ajuste de tamaño para las imágenes de garantías */
+.guarantee-icon {
+width: 450px;
+height: 450px;
+object-fit: contain; /* Esto ayuda a ajustar la imagen sin distorsionarla */
+margin-bottom: 15px; /* Espacio entre la imagen y el título */
+}
+@media (max-width: 768px) {
+.guarantee-icon {
+  width: 400px;
+  height: 400px;
+}
+}
+.clients .client-card {
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+background-color: #f8f9fa;
+max-width: 100%;
+position: relative;
+overflow: hidden;
+}
+
+.clients .client-card:hover {
+transform: translateY(-10px);
+box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.clients .client-card img {
+max-width: 100px;
+transition: transform 0.3s ease;
+}
+
+.clients .client-card:hover img {
+transform: scale(1.1); /* Efecto de acercamiento en la imagen al pasar el cursor */
+}
+
+.clients .client-card h3 {
+font-size: 1.2em;
+margin-top: 10px;
+}
+
+.clients .client-card p {
+font-size: 0.9em;
+color: #666;
+}
+
+.clients .client-card .btn {
+margin-top: 15px;
+}
+/* Estilo para los íconos dentro de la sección de clientes */
+#clients .swiper-slide img {
+width: 80px; /* Ajusta este valor según el tamaño que prefieras */
+height: 80px; /* Forzar un tamaño cuadrado */
+object-fit: contain; /* Ajusta la imagen dentro del contenedor sin distorsionar */
+padding: 10px;
+}
+
+/* Opcional: Alinear los íconos en el centro de cada slide */
+#clients .swiper-slide {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+
+.testimonials {
+padding: 60px 0;
+}
+.testimonial-item {
+display: flex;
+justify-content: center;
+align-items: center;
+height: auto;
+}
+.testimonial-content {
+padding: 35px;
+background: #fff;
+border-radius: 0px;
+box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+max-width: 100%;
+width: 100%;
+}
+.testimonial-text {
+font-size: 1.1em;
+margin-bottom: 20px;
+line-height: 1.6;
+text-align: justify;
+}
+.testimonial-author {
+margin-top: 20px;
+}
+.testimonial-logo {
+width: 60px;
+height: 60px;
+object-fit: contain;
+margin-right: 15px;
+}
+.author-info h4 {
+font-size: 1.2em;
+margin: 0;
+}
+.author-info p {
+font-size: 0.9em;
+color: #777;
+}
+.swiper-button-prev, .swiper-button-next {
+width: 30px;
+height: 30px;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+font-size: 18px;
+width: 30px;
+height: 30px;
+color: #ffc107 !important;
+}
+.swiper-button-next {
+color: #ffc107;
+}
+.swiper-button-next:hover {
+color: #e0a800;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+color: #e0a800 !important;
+}
+.section-title-enhanced-black {
+font-weight: bold;
+font-size: 2em;
+color: #000;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+text-align: center;
+line-height: 1.2;
+}
+.code-editor-container {
+width: 100%;
+max-width: 600px; /* Ancho máximo del editor */
+height: 400px; /* Altura fija del editor */
+border-radius: 5px; /* Bordes redondeados */
+overflow: hidden; /* Para asegurarse de que el editor no sobresalga de los bordes */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para un mejor efecto */
+background-color: #2d2d2d; /* Fondo para que se vea mejor con el tema oscuro */
+margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.CodeMirror {
+height: 100%; /* Ocupa todo el alto del contenedor */
+width: 100%; /* Ocupa todo el ancho del contenedor */
+overflow: hidden !important; /* Quitar scroll */
+}
+
+.CodeMirror-scroll {
+overflow: hidden !important; /* Quitar scroll horizontal y vertical */
+}
+
+/* Estilos para el contenedor de publicidad */
+.custom-ad-container {
+position: relative;
+width: 90%;
+max-width: 450px;
+padding: 0px;
+background-color: #fff; /* Fondo blanco */
+overflow: hidden;
+}
+
+/* Estilos para la imagen */
+.custom-image-wrapper {
+position: relative;
+z-index: 2; /* Asegurarse de que la imagen esté sobre los fondos decorativos */
+}
+
+.custom-image-wrapper img {
+width: 120%; /* Agrandar la imagen */
+height: auto;
+}
+
+/* Estilos para las formas decorativas */
+.custom-background-shapes {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1; /* Detrás de la imagen */
+}
+
+/* Estilos para los pasos y la barra de progreso */
+
+.step.completed .circle {
+background-color: #ffc107; /* Amarillo para indicar completado */
+color: #fff;
+}
+
+.step.completed {
+opacity: 1;
+transition: opacity 1s ease-in-out;
+}
+
+.step {
+opacity: 0.7;
+transition: opacity 1s ease-in-out;
+}
+
+.font-roboto {
+font-family: 'Roboto', sans-serif;
+}
+
+/* Ajustar la posición de la barra de progreso para que esté debajo de los pasos */
+.progress-bar-wrapper {
+position: relative;
+height: 10px;
+background-color: #e0e0e0; /* Fondo gris para la barra de progreso */
+border-radius: 5px;
+overflow: hidden;
+margin-top: 20px; /* Espacio para evitar que toque el contenido */
+}
+
+/*--------------------------------------------------------------
+# Clase unificada para todos los botones
+--------------------------------------------------------------*/
+
+/* Clase unificada para todos los botones */
+.btn-uniform {
+  background-color: var(--accent-color); /* Utiliza el color de acento de la marca */
+  color: var(--contrast-color);
+  padding: 10px 20px; /* Incrementé un poco el padding para dispositivos de escritorio */
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem; /* Tamaño base de fuente */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+}
+
+.btn-uniform:hover {
+  background-color: var(--contrast-color); /* Cambia el color de fondo al pasar el cursor */
+  color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en el hover */
+}
+
+/* Responsividad: Estilos para pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+  .btn-uniform {
+    padding: 8px 15px; /* Reduce el padding para ajustarse mejor en pantallas medianas */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
+  }
+}
+
+/* Responsividad: Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 576px) {
+  .btn-uniform {
+    padding: 6px 12px; /* Padding reducido para pantallas más pequeñas */
+    font-size: 0.85rem; /* Tamaño de fuente más pequeño para mejorar la legibilidad en dispositivos móviles */
+    border-radius: 4px; /* Bordes un poco menos redondeados para ajustarse mejor a móviles */
+    text-align: center; /* Asegura que el texto esté siempre centrado */
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Sección de pasos
+--------------------------------------------------------------*/
+/* General Container de Pasos */
+.steps-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.step-item {
+  max-width: 300px; /* Limitar el ancho máximo del paso para una mejor presentación */
+  margin: 0 auto;
+}
+
+.step-item .circle {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #007bff;
+  background-color: white;
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.step-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+.step-description {
+  font-size: 1rem;
+  color: #555;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Responsividad */
+@media (max-width: 767.98px) {
+  .step-item {
+    max-width: 90%; /* Expandir el ancho del paso en pantallas pequeñas */
+  }
+
+  .step-description {
+    font-size: 0.95rem; /* Reducir el tamaño del texto en pantallas pequeñas */
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Sección de Potencial del Negocio
+--------------------------------------------------------------*/
+/* Sección de Potencial del Negocio */
+.business-potential-section {
+  padding: 60px 0;
+  background-color: #f8f9fa; /* Fondo suave para diferenciar */
+}
+
+.business-potential-section h2 {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+.business-potential-section p.text-muted {
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 767.98px) {
+  .step-description {
+    font-size: 0.95rem; /* Reducir el tamaño del texto en pantallas pequeñas */
+  }
+
+  .icon-wrapper {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Sección de Potencial del Negocio
+--------------------------------------------------------------*/
+
+
+/* Sección "Qué Hacemos" */
+.what-we-do-section {
+  padding: 60px 0;
+}
+
+
+.text-column .sub-title {
+  color: #00b894; /* Color verde similar a la imagen proporcionada */
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.sub-title-underline {
+  width: 50%;
+  height: 3px;
+  background-color: #00b894;
+}
+
+.description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.btn-custom {
+  display: inline-block;
+  background-color: #00b894;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #008f67; /* Color ligeramente más oscuro al pasar el ratón */
+}
+
+.image-column img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 767.98px) {
+  .sub-title {
+    font-size: 1.25rem; /* Reducir el tamaño del subtítulo en pantallas pequeñas */
+  }
+
+  .btn-custom {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.typewriter-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00b894;
+  text-align: center;
+  margin-top: 20px;
+}
+.lottie-container {
+  max-width: 100%;
+  height: 300px; 
+  margin: 0 auto;
+}
+/*--------------------------------------------------------------
+# Sección "Trabajamos Con
+--------------------------------------------------------------*/
+
+/* Sección "Trabajamos Con" */
+.our-services-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tab-button {
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.tab-button:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+/* Tarjetas de Servicios */
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.service-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #e74c3c;
+}
+
+.service-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 15px;
+}
+
+.service-description {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Ocultar los grupos de servicios que no están activos */
+.service-group {
+  display: none;
+}
+
+.service-group.active {
+  display: block;
+}
+
+/* Responsividad */
+@media (max-width: 767.98px) {
+  .tab-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+  }
 }
