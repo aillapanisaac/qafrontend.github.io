@@ -1,16 +1,12 @@
 (() => {
   "use strict";
 
-  // Almacenamiento de selectores en variables para evitar la búsqueda repetida
-  const selectBody = document.querySelector('body');
-  const selectHeader = document.querySelector('#header');
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-  const scrollTop = document.querySelector('.scroll-top');
-
   /**
    * Toggle .scrolled class on body based on scroll position
    */
   const toggleScrolled = () => {
+    const selectBody = document.querySelector('body');
+    const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   };
@@ -21,8 +17,9 @@
   /**
    * Mobile nav toggle
    */
+  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
   const mobileNavToggle = () => {
-    selectBody.classList.toggle('mobile-nav-active');
+    document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   };
@@ -30,10 +27,39 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
   }
 
+  /**
+   * Hide mobile nav on same-page/hash links
+   */
+  document.querySelectorAll('#navmenu a').forEach(navmenu => {
+    navmenu.addEventListener('click', () => {
+      if (document.querySelector('.mobile-nav-active')) mobileNavToggle();
+    });
+  });
+
+  /**
+   * Toggle mobile nav dropdowns
+   */
+  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+    navmenu.addEventListener('click', e => {
+      e.preventDefault();
+      navmenu.parentNode.classList.toggle('active');
+      navmenu.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      e.stopImmediatePropagation();
+    });
+  });
+
+  /**
+   * Preloader removal on page load
+   */
+  const preloader = document.querySelector('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => preloader.remove());
+  }
 
   /**
    * Scroll top button
    */
+  const scrollTop = document.querySelector('.scroll-top');
   const toggleScrollTop = () => {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
@@ -186,10 +212,8 @@
       lineNumbers: true,
       mode: "javascript",
       theme: "monokai", // Tema oscuro similar a editores de código reales
-      readOnly: true, // Para evitar que el usuario escriba manualmente
-      lineWrapping: true // Ajustar líneas para evitar el scroll horizontal
+      readOnly: true // Para evitar que el usuario escriba manualmente
     });
-    
   
     // Código React del componente de inicio de sesión
     const code = `
@@ -354,41 +378,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Elementos de navegación móvil
-  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-  const navMenu = document.querySelector('#navmenu');
-  const navLinks = navMenu.querySelectorAll('a');
-
-  if (mobileNavToggle) {
-    // Manejar clic para mostrar/ocultar menú
-    mobileNavToggle.addEventListener('click', function () {
-      document.body.classList.toggle('mobile-nav-active');
-      this.classList.toggle('bi-list');
-      this.classList.toggle('bi-x');
-    });
-
-    // Accesibilidad - Permitir la navegación por teclado
-    mobileNavToggle.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        document.body.classList.toggle('mobile-nav-active');
-        this.classList.toggle('bi-list');
-        this.classList.toggle('bi-x');
-      }
-    });
-
-    // Permitir la navegación por teclado en los enlaces del menú
-    navLinks.forEach(link => {
-      link.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-          window.location.href = link.getAttribute('href');
-        }
-      });
-    });
-  }
-});
-
-
-
 })();
