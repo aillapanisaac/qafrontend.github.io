@@ -1,12 +1,16 @@
 (() => {
   "use strict";
 
+  // Almacenamiento de selectores en variables para evitar la búsqueda repetida
+  const selectBody = document.querySelector('body');
+  const selectHeader = document.querySelector('#header');
+  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const scrollTop = document.querySelector('.scroll-top');
+
   /**
    * Toggle .scrolled class on body based on scroll position
    */
   const toggleScrolled = () => {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   };
@@ -17,9 +21,8 @@
   /**
    * Mobile nav toggle
    */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
   const mobileNavToggle = () => {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+    selectBody.classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   };
@@ -27,49 +30,10 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) mobileNavToggle();
-    });
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', e => {
-      e.preventDefault();
-      navmenu.parentNode.classList.toggle('active');
-      navmenu.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
-  });
-
-  /**
-   * Preloader removal on page load
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => preloader.remove());
-  }
 
   /**
    * Scroll top button
    */
-  // Scroll suave para todos los enlaces con hashes
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-  const scrollTop = document.querySelector('.scroll-top');
   const toggleScrollTop = () => {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
@@ -351,8 +315,10 @@ let arrayIndex = 0;
 let charIndex = 0;
 
 function typeWriter() {
+  let currentText = '';
   if (charIndex < textArray[arrayIndex].length) {
-    document.getElementById("typewriter-text").innerHTML += textArray[arrayIndex].charAt(charIndex);
+    currentText += textArray[arrayIndex].slice(0, charIndex + 1);
+    document.getElementById("typewriter-text").innerHTML = currentText;
     charIndex++;
     setTimeout(typeWriter, 100);
   } else {
@@ -366,6 +332,7 @@ function typeWriter() {
 }
 
 document.addEventListener("DOMContentLoaded", typeWriter);
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -386,6 +353,40 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById(target).classList.add("active");
     });
   });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Elementos de navegación móvil
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('#navmenu');
+  const navLinks = navMenu.querySelectorAll('a');
+
+  if (mobileNavToggle) {
+    // Manejar clic para mostrar/ocultar menú
+    mobileNavToggle.addEventListener('click', function () {
+      document.body.classList.toggle('mobile-nav-active');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
+
+    // Accesibilidad - Permitir la navegación por teclado
+    mobileNavToggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        document.body.classList.toggle('mobile-nav-active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      }
+    });
+
+    // Permitir la navegación por teclado en los enlaces del menú
+    navLinks.forEach(link => {
+      link.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          window.location.href = link.getAttribute('href');
+        }
+      });
+    });
+  }
 });
 
 
