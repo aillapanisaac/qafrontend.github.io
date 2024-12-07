@@ -113,8 +113,8 @@
   function initializeSwiperClients(swiperContainer) {
     const swiperConfig = {
       loop: true,
-      speed: 600,
-      autoplay: { delay: 2000 },
+      speed: 1500,
+      autoplay: { delay: 100 },
       slidesPerView: 'auto',
       spaceBetween: 30,
       pagination: {
