@@ -1862,7 +1862,7 @@ overflow: hidden !important; /* Quitar scroll horizontal y vertical */
 /* Estilos para el contenedor de publicidad */
 .custom-ad-container {
 position: relative;
-width: 90%;
+width: 10%;
 max-width: 450px;
 padding: 0px;
 background-color: #fff; /* Fondo blanco */
@@ -2037,7 +2037,7 @@ margin-top: 20px; /* Espacio para evitar que toque el contenido */
   font-weight: bold;
   font-size: 1.25rem;
   margin-top: 15px;
-  color: #333;
+  color: var(--heading-color);
 }
 
 .step-description {
@@ -2118,7 +2118,7 @@ margin-top: 20px; /* Espacio para evitar que toque el contenido */
 
 
 .text-column .sub-title {
-  color: #003366; /* Color verde similar a la imagen proporcionada */
+  color: var(--heading-color); /* Color verde similar a la imagen proporcionada */
   font-weight: bold;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -2127,11 +2127,11 @@ margin-top: 20px; /* Espacio para evitar que toque el contenido */
 .sub-title-underline {
   width: 50%;
   height: 3px;
-  background-color: #003366;
+  background-color: #FFC451;
 }
 
 .description {
-  color: #555;
+  color: var(--heading-color);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -2171,7 +2171,7 @@ margin-top: 20px; /* Espacio para evitar que toque el contenido */
 .typewriter-container {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #003366;
+  color: var(--heading-color);
   text-align: center;
   margin-top: 20px;
 }
@@ -2341,7 +2341,7 @@ margin-top: 20px; /* Espacio para evitar que toque el contenido */
 
 #automation-benefits h2 {
   font-size: 2.5rem;
-  color: #003366;
+  color: var(--heading-color);
   font-weight: bold;
   margin-bottom: 20px;
 }
